@@ -220,8 +220,6 @@ This project is licensed under the GNU General Public License v3.0. See the [LIC
 ## XV. Acknowledgments
 
 * [Formula 1 World Championship (1950–2020) Dataset on Kaggle](https://www.kaggle.com/datasets/rohanrao/formula-1-world-championship-1950-2020)
-* The Kaggle and F1 data communities
-* Developers of XGBoost, scikit-learn, and Optuna
 
 ---
 
