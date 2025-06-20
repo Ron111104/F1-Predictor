@@ -176,6 +176,6 @@ This project is licensed under the GNU General Public License - see the [LICENSE
 
 ## 🙏 Acknowledgments
 
-- [Formula 1 World Championship (1950–2020) Dataset](https://www.kaggle.com/datasets/rohanrao/formula-1-world-championship-1950-2020) by [Rohan Rao](https://www.kaggle.com/rohanrao) on Kaggle  
+- [Formula 1 World Championship (1950–2020) Dataset](https://www.kaggle.com/datasets/rohanrao/formula-1-world-championship-1950-2020) on Kaggle  
 
 ---
