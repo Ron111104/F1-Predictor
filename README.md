@@ -1,181 +1,228 @@
-# 🏁 Formula 1 Race Prediction System
+---
+
+# Formula 1 Race Prediction System
 
 A comprehensive machine learning pipeline for predicting Formula 1 race outcomes using ensemble methods, Bayesian optimization, and circuit-specific feature engineering.
 
-## 🚀 Overview
+---
 
-Formula 1 race prediction system that combines multiple machine learning techniques to forecast race positions with high accuracy. The system features two main models: a baseline XGBoost model and an enhanced ensemble model with sophisticated feature engineering and hyperparameter optimization.
+## I. Overview
 
-## ✨ Key Features
+This system combines multiple machine learning techniques to forecast Formula 1 race positions with high accuracy. It features two main models:
 
-- **🤖 Dual Model Architecture**: Baseline XGBoost and Enhanced Ensemble models
-- **🔬 Bayesian Hyperparameter Optimization**: Using Optuna for optimal model performance
-- **🏁 Circuit-Specific Features**: Historical performance analysis for each track
-- **📅 Time-Aware Cross Validation**: Prevents data leakage with GroupKFold validation
-- **🎯 Ensemble Learning**: Stacking with XGBoost and Random Forest
-- **📊 Comprehensive Evaluation**: Podium, Top 10, and points scoring accuracy metrics
-- **📈 Advanced Visualizations**: 12 comprehensive analysis charts
+* A baseline XGBoost model
+* An enhanced ensemble model with advanced feature engineering and hyperparameter optimization
 
-## 🏆 Model Performance
+---
 
-### Enhanced Ensemble Model Results
-- **Overall MAE**: 1.282 positions
-- **Podium Prediction Accuracy**: 91.2%
-- **Top 10 Prediction Accuracy**: 93.7%
+## II. Key Features
 
-### Baseline XGBoost Model Results
-- **Overall MAE**: 1.603 positions
-- **Podium Prediction Accuracy**: 90.6%
-- **Top 10 Prediction Accuracy**: 91.4%
+* Dual Model Architecture: Baseline XGBoost and Enhanced Ensemble models
+* Bayesian Hyperparameter Optimization using Optuna
+* Circuit-Specific Features: Historical performance per track
+* Time-Aware Cross Validation with GroupKFold
+* Ensemble Learning with XGBoost and Random Forest
+* Comprehensive Evaluation: Podium, Top 10, and points-scoring metrics
+* Advanced Visualizations: 12 diagnostic analysis charts
 
-## 🛠️ Technical Stack
+---
 
-- **Python 3.11+**
-- **Core Libraries**: pandas, numpy, scikit-learn, xgboost
-- **Optimization**: optuna
-- **Visualization**: matplotlib, seaborn
-- **Data Processing**: Custom feature engineering pipeline
+## III. Model Performance
 
+### Enhanced Ensemble Model
 
-## 🏃‍♂️ Quick Start
+* Mean Absolute Error (MAE): 1.282 positions
+* Podium Prediction Accuracy: 91.2%
+* Top 10 Prediction Accuracy: 93.7%
+
+### Baseline XGBoost Model
+
+* Mean Absolute Error (MAE): 1.603 positions
+* Podium Prediction Accuracy: 90.6%
+* Top 10 Prediction Accuracy: 91.4%
+
+---
+
+## IV. Technical Stack
+
+* Python 3.11+
+* Libraries: pandas, numpy, scikit-learn, xgboost
+* Optimization: optuna
+* Visualization: matplotlib, seaborn
+* Data Processing: Custom feature engineering pipeline
+
+---
+
+## V. Quick Start
 
 ### Baseline Model
-```python
-# Run the baseline XGBoost model
+
+```bash
 jupyter notebook basemodel.ipynb
 ```
 
-### Enhanced Ensemble Model
-```python
-# Run the advanced ensemble model with full pipeline
+### Ensemble Model
+
+```bash
 jupyter notebook ensemblemodels.ipynb
 ```
 
-## 🔍 Model Features
+---
+
+## VI. Model Features
 
 ### Core Features
-- **Grid Position**: Starting position from qualifying
-- **Driver Standings**: Current championship points and wins
-- **Constructor Standings**: Team performance metrics
-- **Lap Time Statistics**: Mean, min, max, and standard deviation
-- **Pit Stop Data**: Number of stops and duration statistics
-- **Qualifying Performance**: Best qualifying times and positions
-- **Sprint Race Results**: Sprint qualifying and race positions
 
-### Enhanced Features (Ensemble Model)
-- **Circuit-Specific Performance**: Historical driver/constructor performance per track
-- **Circuit Difficulty Index**: Average points scored at each circuit
-- **Advanced Aggregations**: Rolling averages and trend analysis
+* Grid Position (qualifying)
+* Driver Standings: Points and Wins
+* Constructor Standings
+* Lap Time Statistics: Mean, Min, Max, Std
+* Pit Stop Duration and Count
+* Best Qualifying Time
+* Sprint Race Position and Points (from 2021)
 
-## 📈 Model Pipeline
+### Enhanced Features (for Ensemble)
 
-### 1. Data Preprocessing
-- Load and merge multiple F1 datasets
-- Filter data for recent years (2018-2024)
-- Handle missing values and data cleaning
-
-### 2. Feature Engineering
-- Create aggregated statistics for drivers and constructors
-- Generate circuit-specific performance metrics
-- Extract qualifying and sprint race features
-
-### 3. Model Training
-- **Baseline**: Standard XGBoost with manual hyperparameters
-- **Enhanced**: Bayesian optimization with Optuna (30 trials)
-- Time-aware cross-validation using GroupKFold
-
-### 4. Ensemble Learning
-- Stacking regressor with XGBoost and Random Forest
-- Ridge regression as meta-learner
-- 5-fold cross-validation for base models
-
-### 5. Evaluation
-- Multiple accuracy metrics for different prediction categories
-- Comprehensive visualization suite
-- Race-by-race prediction analysis
-
-## 📊 Visualizations
-
-The system generates 12 comprehensive visualizations:
-1. Model Performance Comparison
-2. Classification Accuracies
-3. Feature Importance Analysis
-4. Circuit Performance Analysis
-5. Prediction vs Actual Scatter Plot
-6. Error Distribution Comparison
-7. Cross-Validation Scores
-8. Hyperparameter Optimization History
-9. Season Points Prediction
-10. Position Distribution Analysis
-11. Grid vs Final Position Correlation
-12. Constructor Performance Analysis
-
-## 🎯 Use Cases
-
-- **Race Prediction**: Forecast finishing positions for upcoming races
-- **Fantasy F1**: Optimize team selections based on predicted performance
-- **Betting Analysis**: Identify value bets with probability assessments
-- **Team Strategy**: Understand performance factors and circuit-specific trends
-- **Academic Research**: Study machine learning applications in sports analytics
-
-## 🔬 Technical Highlights
-
-### Bayesian Optimization
-- Automated hyperparameter tuning using Optuna
-- 30 trials for optimal parameter selection
-- Significant performance improvement over manual tuning
-
-### Time-Aware Validation
-- GroupKFold cross-validation by race year
-- Prevents temporal data leakage
-- Realistic performance estimation
-
-### Circuit Intelligence
-- Track-specific driver and constructor performance
-- Historical win rates and average positions
-- Circuit difficulty indexing
-
-## 📝 Model Improvements
-
-The Enhanced Ensemble Model shows:
-- **0.6% MAE improvement** over baseline XGBoost
-- **3 circuit-specific features** added
-- **~15% error reduction** through hyperparameter optimization
-- **Robust ensemble approach** with multiple algorithms
-
-## 📊 Example Output
-
-```
-🏎️ RACE 1132: Silverstone Circuit
-------------------------------------------------------------
-Driver Grid Pred Actual
- HAM    2    1    1
- VER    4    2    2
- NOR    3    3    3
- PIA    5    4    4
- SAI    7    5    5
- ALO   10    6    8
- STR    8    7    7
- HUL    6    8    6
- ALB    9    9    9
- TSU   13   10   10
-
-```
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the GNU General Public License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- [Formula 1 World Championship (1950–2020) Dataset](https://www.kaggle.com/datasets/rohanrao/formula-1-world-championship-1950-2020) on Kaggle  
+* Circuit-Specific Driver/Constructor Trends
+* Circuit Difficulty Index
+* Rolling Averages and Aggregated Season Stats
 
 ---
+
+## VII. Model Pipeline
+
+1. **Data Preprocessing**
+
+   * Load and merge multiple Formula 1 datasets
+   * Filter data for years 2018–2024
+   * Handle missing values and data inconsistencies
+
+2. **Feature Engineering**
+
+   * Aggregate statistics for drivers and constructors
+   * Extract circuit-level performance data
+   * Incorporate qualifying and sprint race metrics
+
+3. **Model Training**
+
+   * Baseline: XGBoost with fixed parameters
+   * Ensemble: Hyperparameter tuning with Optuna (30 trials)
+   * Cross-validation with GroupKFold (year-based)
+
+4. **Ensemble Learning**
+
+   * Stacking using XGBoost and Random Forest
+   * Ridge Regression as meta-learner
+   * 5-fold cross-validation for base estimators
+
+5. **Evaluation**
+
+   * MAE and classification metrics (Podium, Top 10)
+   * Season-wide predictions and race-by-race breakdown
+   * Comprehensive plots and analytics
+
+---
+
+## VIII. Visualizations
+
+1. Model Performance Comparison
+2. Podium and Top 10 Accuracy Scores
+3. Feature Importance Ranking
+4. Circuit Performance Trends
+5. Prediction vs Actual Scatter Plot
+6. Error Distribution Histograms
+7. Cross-Validation Fold Scores
+8. Optuna Optimization History
+9. Predicted Points Distribution
+10. Finishing Position Histograms
+11. Grid vs Final Position Correlation
+12. Constructor Season Trends
+
+---
+
+## IX. Use Cases
+
+* Race Position Forecasting
+* Fantasy Formula 1 Team Optimization
+* Performance-Based Betting Analysis
+* Team Strategic Decision Support
+* Machine Learning in Sports Research
+
+---
+
+## X. Technical Highlights
+
+### Hyperparameter Optimization
+
+* Optuna with Bayesian search
+* 30 trials to fine-tune XGBoost and Random Forest
+* \~15% error reduction over manual tuning
+
+### Time-Aware Validation
+
+* Year-based GroupKFold
+* Prevents temporal data leakage
+* Realistic test scenarios
+
+### Circuit Intelligence
+
+* Track-specific trends per constructor and driver
+* Circuit difficulty ratings
+* Historical performance encoding
+
+---
+
+## XI. Model Improvements
+
+* 0.6 MAE improvement over baseline
+* Three circuit-specific features added
+* Error reduction through optimization and ensembling
+* Stacked learning with diverse regressors
+
+---
+
+## XII. Example Output
+
+```
+RACE 1132: Silverstone Circuit
+----------------------------------------
+Driver   Grid   Pred   Actual
+HAM       2       1       1
+VER       4       2       2
+NOR       3       3       3
+PIA       5       4       4
+SAI       7       5       5
+ALO      10       6       8
+STR       8       7       7
+HUL       6       8       6
+ALB       9       9       9
+TSU      13      10      10
+```
+
+---
+
+## XIII. Contributing
+
+1. Fork the repository
+2. Create a new feature branch (`git checkout -b feature/your-feature-name`)
+3. Commit your changes (`git commit -m "Add your feature"`)
+4. Push to the branch (`git push origin feature/your-feature-name`)
+5. Open a Pull Request
+
+---
+
+## XIV. License
+
+This project is licensed under the GNU General Public License v3.0. See the [LICENSE](LICENSE) file for details.
+
+---
+
+## XV. Acknowledgments
+
+* [Formula 1 World Championship (1950–2020) Dataset on Kaggle](https://www.kaggle.com/datasets/rohanrao/formula-1-world-championship-1950-2020)
+* The Kaggle and F1 data communities
+* Developers of XGBoost, scikit-learn, and Optuna
+
+---
+
+
