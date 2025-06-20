@@ -19,10 +19,9 @@ Formula 1 race prediction system that combines multiple machine learning techniq
 ## 🏆 Model Performance
 
 ### Enhanced Ensemble Model Results
-- **Overall MAE**: 1.593 positions
-- **Podium Prediction Accuracy**: 90.4%
-- **Top 10 Prediction Accuracy**: 92.1%
-- **Points Scoring Accuracy**: 92.1%
+- **Overall MAE**: 1.282 positions
+- **Podium Prediction Accuracy**: 91.2%
+- **Top 10 Prediction Accuracy**: 93.7%
 
 ### Baseline XGBoost Model Results
 - **Overall MAE**: 1.603 positions
@@ -150,16 +149,17 @@ The Enhanced Ensemble Model shows:
 🏎️ RACE 1132: Silverstone Circuit
 ------------------------------------------------------------
 Driver Grid Pred Actual
- HAM    2    2    1
- VER    4    3    2
+ HAM    2    1    1
+ VER    4    2    2
  NOR    3    3    3
- PIA    5    5    4
+ PIA    5    4    4
  SAI    7    5    5
- STR    8    8    7
- ALO   10    8    8
- HUL    6    9    6
- ALB    9   10    9
- TSU   13   11   10
+ ALO   10    6    8
+ STR    8    7    7
+ HUL    6    8    6
+ ALB    9    9    9
+ TSU   13   10   10
+
 ```
 
 ## 🤝 Contributing
